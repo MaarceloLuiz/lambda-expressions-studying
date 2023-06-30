@@ -27,10 +27,14 @@ public class Program {
 		};
 		*/
 		
+		/*
 		//to make it more concise:
 		Comparator<Product> comp = (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-
-		list.sort(comp);
+		*/
+		
+		//to make it even more concise:
+		//the method 'sort' has the Comparator as an argument, so we can add it directly when we call the method
+		list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 
 		for (Product p : list) {
 			System.out.println(p);
