@@ -20,10 +20,15 @@ public class Program {
 		
 		//arrow function:
 		//this 'comp' is a function receiving as an argument 'p1, p2' and returning the comparison
+		
+		/*
 		Comparator<Product> comp = (p1, p2) -> {
 			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 		};
-				
+		*/
+		
+		//to make it more concise:
+		Comparator<Product> comp = (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 
 		list.sort(comp);
 
