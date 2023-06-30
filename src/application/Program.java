@@ -16,15 +16,14 @@ public class Program {
 		list.add(new Product("Notebook", 1200.00));
 		list.add(new Product("Tablet", 450.00));
 
-		//creating an Anonymous Class
+		//instead of creating a whole anonymous class, we can make our declaration smaller by using a lambda expression:
 		
-		//we don't necessarily need a separated class to implement the Comparator method, we can create this anonymous class on the main Program
-		Comparator<Product> comp = new Comparator<Product>() {
-			@Override
-			public int compare(Product p1, Product p2) {
-				return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-			}
+		//arrow function:
+		//this 'comp' is a function receiving as an argument 'p1, p2' and returning the comparison
+		Comparator<Product> comp = (p1, p2) -> {
+			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 		};
+				
 
 		list.sort(comp);
 
